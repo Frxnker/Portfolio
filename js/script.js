@@ -117,48 +117,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form submission with AJAX (FormSubmit.co)
+    // Form submission with Mailto
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
+        contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const submitBtn = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.textContent;
             
-            // UI Feedback
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-
-            // Prepare data
-            const formData = new FormData(contactForm);
-            const data = {};
-            formData.forEach((value, key) => data[key] = value);
+            const name = contactForm.querySelector('input[name="name"]').value;
+            const email = contactForm.querySelector('input[name="email"]').value;
+            const message = contactForm.querySelector('textarea[name="message"]').value;
             
-            try {
-                const response = await fetch(contactForm.action, {
-                    method: 'POST',
-                    headers: { 
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                const result = await response.json();
-
-                if (response.ok && result.success === "true") {
-                    alert('¡Gracias por tu mensaje! Francisco te contactará pronto.');
-                    contactForm.reset();
-                } else {
-                    alert('Oops! Hubo un problema: ' + (result.message || 'Inténtalo de nuevo.'));
-                }
-            } catch (error) {
-                alert('Error de conexión. Por favor, comprueba tu internet e inténtalo de nuevo.');
-                console.error('Form submission error:', error);
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = originalBtnText;
-            }
+            const subject = encodeURIComponent(`Nuevo mensaje de ${name} - Portfolio`);
+            const body = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\nMensaje:\n${message}`);
+            
+            // Open default mail client
+            window.location.href = `mailto:fraanlpzz17@gmail.com?subject=${subject}&body=${body}`;
+            
+            // Clear form and show feedback
+            alert('Se ha abierto tu gestor de correo para enviar el mensaje. ¡Gracias!');
+            contactForm.reset();
         });
     }
 });
