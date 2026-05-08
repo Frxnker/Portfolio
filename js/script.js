@@ -74,11 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     mobileMenuBtn.addEventListener('click', () => {
         navOverlay.classList.toggle('active');
-        const icon = mobileMenuBtn.querySelector('i');
         if (navOverlay.classList.contains('active')) {
-            icon.setAttribute('data-lucide', 'x');
+            mobileMenuBtn.innerHTML = '<i data-lucide="x"></i>';
         } else {
-            icon.setAttribute('data-lucide', 'menu');
+            mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
         }
         lucide.createIcons();
     });
@@ -86,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     overlayLinks.forEach(link => {
         link.addEventListener('click', () => {
             navOverlay.classList.remove('active');
-            mobileMenuBtn.querySelector('i').setAttribute('data-lucide', 'menu');
+            mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
             lucide.createIcons();
         });
     });
