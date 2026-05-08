@@ -152,7 +152,9 @@ ul {
     width: 100%;
     z-index: 1000;
     padding: 1.5rem 0;
-    transition: var(--transition);
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
 }
 
 #navbar.scrolled {
