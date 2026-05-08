@@ -74,6 +74,7 @@ ul {
     font-size: 3rem;
     background: linear-gradient(to right, #fff, var(--text-muted));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
