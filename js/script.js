@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form submission with AJAX (Formspree)
+    // Form submission with AJAX (FormSubmit.co)
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
@@ -129,30 +129,32 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.textContent = 'Enviando...';
 
+            // Prepare data
             const formData = new FormData(contactForm);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
             
             try {
                 const response = await fetch(contactForm.action, {
-                    method: contactForm.method,
-                    body: formData,
-                    headers: {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+                    body: JSON.stringify(data)
                 });
 
-                if (response.ok) {
+                const result = await response.json();
+
+                if (response.ok && result.success === "true") {
                     alert('¡Gracias por tu mensaje! Francisco te contactará pronto.');
                     contactForm.reset();
                 } else {
-                    const data = await response.json();
-                    if (data.errors) {
-                        alert(data.errors.map(error => error.message).join(", "));
-                    } else {
-                        alert('Oops! Hubo un problema al enviar el formulario.');
-                    }
+                    alert('Oops! Hubo un problema: ' + (result.message || 'Inténtalo de nuevo.'));
                 }
             } catch (error) {
-                alert('Error de conexión. Por favor, inténtalo de nuevo.');
+                alert('Error de conexión. Por favor, comprueba tu internet e inténtalo de nuevo.');
+                console.error('Form submission error:', error);
             } finally {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalBtnText;
