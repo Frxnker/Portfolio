@@ -70,7 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navOverlay = document.getElementById('nav-overlay');
+    const navOverlayClose = document.getElementById('nav-overlay-close');
     const overlayLinks = navOverlay.querySelectorAll('a');
+
+    const closeMobileMenu = () => {
+        navOverlay.classList.remove('active');
+        mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
+        lucide.createIcons();
+    };
 
     mobileMenuBtn.addEventListener('click', () => {
         navOverlay.classList.toggle('active');
@@ -82,12 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     });
 
+    if (navOverlayClose) {
+        navOverlayClose.addEventListener('click', closeMobileMenu);
+    }
+
     overlayLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navOverlay.classList.remove('active');
-            mobileMenuBtn.innerHTML = '<i data-lucide="menu"></i>';
-            lucide.createIcons();
-        });
+        link.addEventListener('click', closeMobileMenu);
     });
 
     // Smooth scroll for nav links

@@ -188,10 +188,32 @@ ul {
     z-index: 1000;
     transform: translateY(-100%);
     transition: var(--transition);
+    padding: 2rem;
 }
 
 .nav-overlay.active {
     transform: translateY(0);
+}
+
+.nav-overlay-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: white;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.nav-overlay-close:hover {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .nav-overlay a {
