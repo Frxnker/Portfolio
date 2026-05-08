@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco López Lobanova | Especialista en IT</title>
+    <meta name="description" content="Portfolio profesional de Francisco López Lobanova, especialista en IT, sistemas y desarrollo de aplicaciones web.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">FLL<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#experience">Experiencia</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="nav-overlay" id="nav-overlay">
+        <a href="#home">Inicio</a>
+        <a href="#about">Sobre mí</a>
+        <a href="#skills">Habilidades</a>
+        <a href="#projects">Proyectos</a>
+        <a href="#experience">Experiencia</a>
+        <a href="#contact">Contacto</a>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg" id="hero-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="badge" data-reveal>Especialista en IT</span>
+                    <h1 data-reveal>Francisco López <span>Lobanova</span></h1>
+                    <p class="role-text" data-reveal>Soy <span id="typewriter"></span></p>
+                    <p class="description" data-reveal>
+                        Versatilidad en sistemas y despliegue de soluciones eficientes en entornos de desarrollo y producción.
+                    </p>
+                    <div class="hero-actions" data-reveal>
+                        <a href="#projects" class="btn btn-primary">Ver Proyectos</a>
+                        <a href="#contact" class="btn btn-secondary">Contactar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse"></div>
+                <span>Desliza</span>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section-padding">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-subtitle">Conóceme</span>
+                    <h2 class="section-title">Sobre Mí</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-info" data-reveal>
+                        <p>
+                            Me defino por mi versatilidad en sistemas y mi habilidad para desplegar soluciones eficientes en entornos de desarrollo. Actualmente cursando el Grado Superior de Desarrollo de Aplicaciones Web, combino mi formación académica con experiencia práctica en hardware y redes.
+                        </p>
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <i data-lucide="map-pin"></i>
+                                <h3>Ubicación</h3>
+                                <p>Almería, España</p>
+                            </div>
+                            <div class="info-card">
+                                <i data-lucide="car"></i>
+                                <h3>Movilidad</h3>
+                                <p>Vehículo propio</p>
+                            </div>
+                            <div class="info-card">
+                                <i data-lucide="languages"></i>
+                                <h3>Idiomas</h3>
+                                <div class="lang-item">
+                                    <span>Castellano</span>
+                                    <div class="progress-bar"><div class="progress" style="width: 100%"></div></div>
+                                </div>
+                                <div class="lang-item">
+                                    <span>Ruso</span>
+                                    <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+                                </div>
+                                <div class="lang-item">
+                                    <span>Inglés</span>
+                                    <div class="progress-bar"><div class="progress" style="width: 60%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section-padding">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-subtitle">Lo que hago</span>
+                    <h2 class="section-title">Habilidades Técnicas</h2>
+                </div>
+                <div class="skills-grid">
+                    <!-- Programming -->
+                    <div class="skill-category" data-reveal>
+                        <div class="category-header">
+                            <i data-lucide="code"></i>
+                            <h3>Programación & Web</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Java & Spring Boot</li>
+                            <li>Kotlin</li>
+                            <li>Python</li>
+                            <li>JavaScript (Node.js)</li>
+                            <li>HTML5 & CSS3</li>
+                            <li>SQL (MySQL, SQLite)</li>
+                        </ul>
+                    </div>
+                    <!-- Systems & DevOps -->
+                    <div class="skill-category" data-reveal>
+                        <div class="category-header">
+                            <i data-lucide="terminal"></i>
+                            <h3>Sistemas & DevOps</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Linux (Terminal & Server)</li>
+                            <li>Windows Server</li>
+                            <li>Docker</li>
+                            <li>AWS (Nociones)</li>
+                            <li>Git (GitHub/GitLab)</li>
+                        </ul>
+                    </div>
+                    <!-- Hardware & Networks -->
+                    <div class="skill-category" data-reveal>
+                        <div class="category-header">
+                            <i data-lucide="cpu"></i>
+                            <h3>Hardware & Redes</h3>
+                        </div>
+                        <ul class="skill-list">
+                            <li>Montaje de equipos</li>
+                            <li>Diagnóstico & Mantenimiento</li>
+                            <li>Redes TCP/IP & DNS</li>
+                            <li>Seguridad básica</li>
+                            <li>Optimización BIOS/UEFI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section-padding">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-subtitle">Portafolio</span>
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-reveal>
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&q=80&w=800" alt="Hardware Portal">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" title="Ver Proyecto"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Portal de Hardware Gráfico</h3>
+                            <p>Plataforma avanzada con comparativas técnicas de GPUs y especificaciones detalladas.</p>
+                            <div class="project-tags">
+                                <span>HTML/CSS</span>
+                                <span>JS</span>
+                                <span>Hardware</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card" data-reveal>
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&q=80&w=800" alt="Weather App">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" title="Ver Proyecto"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Pronóstico Meteorológico</h3>
+                            <p>Aplicación web que muestra el tiempo en tiempo real utilizando APIs externas.</p>
+                            <div class="project-tags">
+                                <span>JavaScript</span>
+                                <span>API</span>
+                                <span>Web App</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="project-card" data-reveal>
+                        <div class="project-img">
+                            <img src="https://images.unsplash.com/photo-1526498460520-4c246339dccb?auto=format&fit=crop&q=80&w=800" alt="Android Calculator">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="#" title="Ver Proyecto"><i data-lucide="external-link"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Calculadora Android</h3>
+                            <p>Aplicación nativa desarrollada para dispositivos Android con interfaz moderna.</p>
+                            <div class="project-tags">
+                                <span>Java</span>
+                                <span>Android Studio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Education Section -->
+        <section id="experience" class="experience section-padding">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-subtitle">Trayectoria</span>
+                    <h2 class="section-title">Experiencia & Educación</h2>
+                </div>
+                <div class="timeline">
+                    <!-- Item 1 -->
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - Presente</div>
+                        <div class="timeline-content">
+                            <h3>Grado Superior DAW</h3>
+                            <p class="timeline-org">IES Celia Viñas</p>
+                            <p>Desarrollo de Aplicaciones Web. Enfocado en tecnologías modernas y buenas prácticas.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2024 - 2025</div>
+                        <div class="timeline-content">
+                            <h3>Camarero / Ayudante</h3>
+                            <p class="timeline-org">Foster's Hollywood / Champions Burguer</p>
+                            <p>Desarrollo de habilidades de trabajo en equipo y atención al cliente en entornos dinámicos.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">2023 - 2024</div>
+                        <div class="timeline-content">
+                            <h3>Colaborador</h3>
+                            <p class="timeline-org">Media Maratón Almería</p>
+                            <p>Apoyo logístico y organizativo en eventos deportivos locales.</p>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="timeline-item" data-reveal>
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-date">Finalizado</div>
+                        <div class="timeline-content">
+                            <h3>Bachillerato Ciencias Sociales</h3>
+                            <p class="timeline-org">IES Azcona</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section-padding">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <span class="section-subtitle">Contacto</span>
+                    <h2 class="section-title">¿Hablamos?</h2>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info" data-reveal>
+                        <p>Estoy disponible para nuevos proyectos y oportunidades laborales. No dudes en contactarme.</p>
+                        <div class="contact-methods">
+                            <a href="mailto:fraanlpzz17@gmail.com" class="contact-method">
+                                <i data-lucide="mail"></i>
+                                <span>fraanlpzz17@gmail.com</span>
+                            </a>
+                            <a href="tel:+34610684009" class="contact-method">
+                                <i data-lucide="phone"></i>
+                                <span>+34 610 68 40 09</span>
+                            </a>
+                            <div class="contact-method">
+                                <i data-lucide="map-pin"></i>
+                                <span>Almería, España</span>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" target="_blank" class="social-link"><i data-lucide="github"></i></a>
+                            <a href="#" target="_blank" class="social-link"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form" data-reveal>
+                        <div class="form-group">
+                            <input type="text" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Mensaje" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Francisco López Lobanova. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
