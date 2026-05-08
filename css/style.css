@@ -12,6 +12,30 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --container-width: 1200px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Hero Colors */
+    --hero-overlay: rgba(10, 10, 12, 0.8);
+    --hero-glow-1: rgba(59, 130, 246, 0.2);
+    --hero-glow-2: rgba(139, 92, 246, 0.15);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-main: #f8fafc;
+        --bg-secondary: #ffffff;
+        --bg-accent: #f1f5f9;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --primary: #2563eb;
+        --primary-glow: rgba(37, 99, 235, 0.15);
+        --secondary: #7c3aed;
+        --glass: rgba(0, 0, 0, 0.02);
+        --glass-border: rgba(0, 0, 0, 0.06);
+        
+        --hero-overlay: rgba(248, 250, 252, 0.8);
+        --hero-glow-1: rgba(37, 99, 235, 0.08);
+        --hero-glow-2: rgba(124, 58, 237, 0.05);
+    }
 }
 
 /* Reset & Base Styles */
@@ -72,7 +96,7 @@ ul {
 
 .section-title {
     font-size: 3rem;
-    background: linear-gradient(to right, #fff, var(--text-muted));
+    background: linear-gradient(to right, var(--text-main), var(--text-muted));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -239,9 +263,9 @@ ul {
     height: 100%;
     z-index: -1;
     background: 
-        linear-gradient(rgba(10, 10, 12, 0.8), rgba(10, 10, 12, 0.8)),
-        radial-gradient(circle at 70% 30%, rgba(59, 130, 246, 0.2), transparent 40%),
-        radial-gradient(circle at 20% 70%, rgba(139, 92, 246, 0.15), transparent 40%),
+        linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+        radial-gradient(circle at 70% 30%, var(--hero-glow-1), transparent 40%),
+        radial-gradient(circle at 20% 70%, var(--hero-glow-2), transparent 40%),
         url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.826 10.558c1.026 1.312 1.174 3.34.326 4.54l-9.514 13.448c-.848 1.2-2.738 1.488-4.22 1.258l-15.01-2.316c-1.482-.23-2.336-1.506-1.906-2.846l4.336-13.51c.43-1.34 1.944-2.122 3.382-1.746l14.73 3.844c1.438.376 2.518 2.016 2.876 3.238l5.01 17.112z' fill='%233b82f6' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
