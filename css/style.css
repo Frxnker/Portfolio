@@ -23,26 +23,24 @@
     --overlay-bg: rgba(10, 10, 12, 0.98);
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-main: #f8fafc;
-        --bg-secondary: #ffffff;
-        --bg-accent: #f1f5f9;
-        --text-main: #0f172a;
-        --text-muted: #64748b;
-        --primary: #2563eb;
-        --primary-glow: rgba(37, 99, 235, 0.15);
-        --secondary: #7c3aed;
-        --glass: rgba(0, 0, 0, 0.02);
-        --glass-border: rgba(0, 0, 0, 0.06);
-        
-        --hero-overlay: rgba(248, 250, 252, 0.8);
-        --hero-glow-1: rgba(37, 99, 235, 0.08);
-        --hero-glow-2: rgba(124, 58, 237, 0.05);
+:root[data-theme="light"] {
+    --bg-main: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-accent: #f1f5f9;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --primary: #2563eb;
+    --primary-glow: rgba(37, 99, 235, 0.15);
+    --secondary: #7c3aed;
+    --glass: rgba(0, 0, 0, 0.02);
+    --glass-border: rgba(0, 0, 0, 0.06);
+    
+    --hero-overlay: rgba(248, 250, 252, 0.8);
+    --hero-glow-1: rgba(37, 99, 235, 0.08);
+    --hero-glow-2: rgba(124, 58, 237, 0.05);
 
-        --navbar-bg: rgba(248, 250, 252, 0.85);
-        --overlay-bg: rgba(248, 250, 252, 0.98);
-    }
+    --navbar-bg: rgba(248, 250, 252, 0.85);
+    --overlay-bg: rgba(248, 250, 252, 0.98);
 }
 
 /* Reset & Base Styles */
@@ -59,6 +57,9 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1, h2, h3, .logo {
@@ -204,6 +205,43 @@ ul {
     cursor: pointer;
     position: relative;
     z-index: 1001;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    z-index: 1001;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+    border-color: var(--primary);
+}
+
+.theme-toggle i {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.04);
 }
 
 .nav-overlay {

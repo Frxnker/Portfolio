@@ -1,4 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Theme toggle logic
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlElement = document.documentElement;
+    
+    // Check for saved theme or system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+    
+    const initialTheme = savedTheme || (systemPrefersLight ? 'light' : 'dark');
+    setTheme(initialTheme);
+    
+    function setTheme(theme) {
+        if (theme === 'light') {
+            htmlElement.setAttribute('data-theme', 'light');
+            themeToggle.innerHTML = '<i data-lucide="sun"></i>';
+        } else {
+            htmlElement.removeAttribute('data-theme');
+            themeToggle.innerHTML = '<i data-lucide="moon"></i>';
+        }
+        localStorage.setItem('theme', theme);
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    }
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+            setTheme(currentTheme === 'light' ? 'dark' : 'light');
+        });
+    }
+
     // Navbar scroll effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
