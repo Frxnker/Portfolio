@@ -117,46 +117,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Form submission with FormSubmit AJAX
-    const contactForm = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const formStatus = document.getElementById('form-status');
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            // Set loading state
-            submitBtn.classList.add('loading');
-            formStatus.className = 'form-status';
-            formStatus.textContent = '';
-            
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
-            
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/fraanlpzz17@gmail.com', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                });
-                
-                if (response.ok) {
-                    formStatus.classList.add('success');
-                    formStatus.textContent = '¡Mensaje enviado con éxito! Te responderé pronto.';
-                    contactForm.reset();
-                } else {
-                    throw new Error();
-                }
-            } catch (error) {
-                formStatus.classList.add('error');
-                formStatus.textContent = 'Hubo un problema al enviar el mensaje. Inténtalo de nuevo.';
-            } finally {
-                submitBtn.classList.remove('loading');
-            }
-        });
-    }
+    // Form submission handled by Formspree SDK in index.html
 });

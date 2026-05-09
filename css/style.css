@@ -908,29 +908,65 @@ footer {
     }
 }
 
-/* Form Submission States */
-.form-status {
-    margin-top: 1rem;
+/* Formspree AJAX States */
+[data-fs-success], 
+[data-fs-error] {
+    display: none; /* Hidden by default, SDK will show them */
+    margin-bottom: 1.5rem;
     padding: 1rem;
     border-radius: 12px;
     font-size: 0.9rem;
-    display: none;
     text-align: center;
     animation: fadeIn 0.3s ease;
 }
 
-.form-status.success {
-    display: block;
+[data-fs-success] {
     background: rgba(34, 197, 94, 0.1);
     border: 1px solid rgba(34, 197, 94, 0.2);
     color: #4ade80;
 }
 
-.form-status.error {
-    display: block;
+[data-fs-error] {
     background: rgba(239, 68, 68, 0.1);
     border: 1px solid rgba(239, 68, 68, 0.2);
     color: #f87171;
+}
+
+.field-error {
+    color: #f87171;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+    display: block;
+    min-height: 1.2rem;
+}
+
+[data-fs-field][aria-invalid="true"] {
+    border-color: #f87171 !important;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1) !important;
+}
+
+.btn-primary[data-fs-submit-btn]:disabled {
+    opacity: 0.7;
+    pointer-events: none;
+    position: relative;
+}
+
+.btn-primary[data-fs-submit-btn]:disabled span {
+    visibility: hidden;
+}
+
+.btn-primary[data-fs-submit-btn]:disabled::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 0.8s ease-in-out infinite;
 }
 
 .btn-primary.loading {
